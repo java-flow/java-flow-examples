@@ -5,9 +5,7 @@ import com.javaflow.core.support.Flow;
 import com.javaflow.core.support.FlowDefiner;
 import com.javaflow.core.support.Msg;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @AllArgsConstructor
 public class RequestFlow implements FlowDefiner {
 
@@ -23,7 +21,7 @@ public class RequestFlow implements FlowDefiner {
                 .next(msg -> msg);
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Flow flow = new RequestFlow().deploy();
         flow.invoke(new Msg().payload("hello"));
     }

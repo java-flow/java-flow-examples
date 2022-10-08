@@ -5,12 +5,10 @@ import com.javaflow.core.network.HttpOut;
 import com.javaflow.core.support.Flow;
 import com.javaflow.core.support.FlowDefiner;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import spark.route.HttpMethod;
 
 import java.time.ZonedDateTime;
 
-@Slf4j
 @AllArgsConstructor
 public class PrintTimeFlow implements FlowDefiner {
 
@@ -28,7 +26,7 @@ public class PrintTimeFlow implements FlowDefiner {
                 .next(new HttpOut());
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         new PrintTimeFlow(8080, HttpMethod.get, "/time").deploy();
     }
 
